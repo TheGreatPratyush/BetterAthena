@@ -439,3 +439,294 @@ appearing in the layout.
 
   cursor: not-allowed;
 }
+
+/* =========================
+   Disabled button state
+========================= */
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================
+   Feedback messages
+========================= */
+
+.error-message {
+  font-size: 14px;
+  color: #c0392b;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.success-message {
+  font-size: 14px;
+  color: #27ae60;
+  line-height: 1.5;
+}
+
+.success-message code {
+  font-size: 12px;
+  word-break: break-all;
+}
+
+/* =========================
+   Exam header — right side
+========================= */
+
+.exam-header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* =========================
+   Countdown timer
+========================= */
+
+.timer {
+  font-size: 17px;
+  font-weight: 700;
+  color: #263c53;
+  letter-spacing: 0.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Turns red when fewer than 60 seconds remain */
+.timer-warning {
+  color: #c0392b;
+}
+
+/* =========================
+   Tab-switch monitoring badge
+========================= */
+
+.monitoring-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+/* =========================
+   Exam navigation (Prev / dots / Next)
+========================= */
+
+.exam-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.nav-btn {
+  padding: 11px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #263c53;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-btn:disabled {
+  background: #c2c7cd;
+  cursor: not-allowed;
+}
+
+.nav-btn:not(:disabled):hover {
+  background: #1f3246;
+}
+
+/* =========================
+   Question dots
+========================= */
+
+.question-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1.5px solid #d9d6d1;
+  border-radius: 8px;
+  background: white;
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+/* The question the student is currently looking at */
+.dot.dot-current {
+  background: #263c53;
+  border-color: #263c53;
+  color: white;
+}
+
+/* A question that has been answered */
+.dot.dot-answered {
+  background: #7eb5e9;
+  border-color: #7eb5e9;
+  color: white;
+}
+
+/* Current + answered: current dot style takes priority */
+.dot.dot-current.dot-answered {
+  background: #263c53;
+  border-color: #263c53;
+  color: white;
+}
+
+/* =========================
+   Results page
+========================= */
+
+.results-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f4f2;
+  padding: 48px 40px;
+}
+
+.results-container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.results-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #242424;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.auto-submit-note {
+  text-align: center;
+  font-size: 14px;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 24px;
+}
+
+/* Large score card */
+.results-card {
+  background: white;
+  border: 1px solid #e7e4df;
+  border-radius: 12px;
+  padding: 36px;
+  text-align: center;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.025);
+}
+
+.score-big {
+  font-size: 56px;
+  font-weight: 700;
+  color: #263c53;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.score-label {
+  font-size: 15px;
+  color: #666;
+}
+
+/* Detail cards (summary table + answer breakdown) */
+.results-detail-card {
+  background: white;
+  border: 1px solid #e7e4df;
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.025);
+}
+
+.breakdown-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin-bottom: 18px;
+}
+
+/* Summary table */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.results-table td {
+  padding: 9px 4px;
+  border-bottom: 1px solid #f0ede9;
+  color: #444;
+}
+
+.results-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Per-question answer rows */
+.answer-row {
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border-left: 4px solid transparent;
+}
+
+.answer-row.correct {
+  background: #f0fdf4;
+  border-left-color: #22c55e;
+}
+
+.answer-row.incorrect {
+  background: #fff1f2;
+  border-left-color: #f43f5e;
+}
+
+.answer-row.unanswered {
+  background: #fafaf9;
+  border-left-color: #d1d5db;
+}
+
+.answer-q {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #292929;
+  margin-bottom: 4px;
+}
+
+.answer-a {
+  display: block;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Save-status message at the bottom of the results page */
+.save-status {
+  text-align: center;
+  padding: 12px;
+}
